@@ -1,0 +1,41 @@
+.Container {
+    background: #E5F4EC;
+    height: 100%;
+    width: 50%;
+}
+
+.Head {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    border-bottom: solid 2px black ;
+}
+
+.Head > h1 {
+    font-size: 40px;   
+}
+
+.Button {
+    background: #8AEA92;
+    border: none;
+    font-size: 20px;
+    height: 31px;
+}
+
+.ButtonTwo {
+    background: #FEC2C2;
+    border: none;
+    font-size: 20px;
+    height: 31px;
+}
+
+.HouseContainer {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+}
