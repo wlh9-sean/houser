@@ -15,6 +15,10 @@ massive(CONNECTION_STRING).then(db => {
     console.log('Database Connected! 🚀')
 }).catch(err => console.log(err))
 
+app.get('/api/houses', ctrl.getHouse)
+app.post('/api/house', ctrl.newHouse)
+app.delete('/api/houses/:id', ctrl.deleteHouse)
+
 
 
 app.listen(SERVER_PORT, () => console.log(`Serving on port ${SERVER_PORT} 🦄`))
