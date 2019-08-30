@@ -1,14 +1,13 @@
 import React from 'react';
-import Wizard from './Components/Wizard/Wizard'
+import './App.css'
 import Header from './Components/Header/Header'
-import Dashboard from './Components/Dashboard/Dashboard'
+import Router from './routes'
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Wizard />
-      <Dashboard />
+      {Router}
     </div>
   );
 }
