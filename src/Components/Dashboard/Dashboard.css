@@ -39,3 +39,8 @@
     display: flex;
     flex-direction: column;
 }
+
+.House {
+    margin: 10px;
+    background: #DEDEDE;
+}

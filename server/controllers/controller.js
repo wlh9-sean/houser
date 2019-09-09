@@ -18,8 +18,8 @@ const newHouse = (req, res) => {
 const deleteHouse = (req, res) => {
     const {id} = req.params
     const db = req.app.get('db')
-    db.delete_house([id]).then(() => {
-        res.status(200).send(`Successfully deleted house ${id}!`)
+    db.delete_house([id]).then((houses) => {
+        res.status(200).send(houses)
     })
 }
 

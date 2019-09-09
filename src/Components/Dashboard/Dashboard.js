@@ -22,27 +22,26 @@ export default class Dashboard extends Component {
     }
 
     deleteHouse = (id) => {
-        axios.delete(`/api/houses/${id}`).then(res => {
+        axios.delete(`/api/house/${id}`).then(response => {
             this.setState({
-                houses: res.data
+                houses: response.data
             })
         }).catch(err => console.log(err))
     }
 
     render() {
-        console.log(this.state)
         const mappedHouses = this.state.houses.map((house, i) => {
             return(
-                <div key={i}>
+                <div key={house.id} className='House'>
                     <h1>{house.name}</h1>
                     <h1>{house.address}</h1>
                     <h1>{house.city}</h1>
                     <h1>{house.state}</h1>
                     <h1>{house.zip}</h1>
+                    <button onClick={() => this.deleteHouse(house.id)}>Delete</button>
                 </div>
             )
         })
-        console.log(this.state)
         return (
             <div className='Container'>
                 <div className='Head'>
@@ -53,7 +52,7 @@ export default class Dashboard extends Component {
                 </div>
 
                 <div className='HouseContainer'>
-                    <House houses={this.state.house}/>
+                    <House houses={this.state.houses} delete={this.deleteHouse}/>
                     <div>{mappedHouses}</div>
                 </div>
                 
