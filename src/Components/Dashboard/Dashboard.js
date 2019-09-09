@@ -13,10 +13,18 @@ export default class Dashboard extends Component {
         }
     }
 
-     getHouses = () => {
+     componentDidMount = () => {
         axios.get('/api/houses').then(response => {
             this.setState({
                 houses: response.data
+            })
+        }).catch(err => console.log(err))
+    }
+
+    deleteHouse = (id) => {
+        axios.delete(`/api/houses/${id}`).then(res => {
+            this.setState({
+                houses: res.data
             })
         }).catch(err => console.log(err))
     }
@@ -27,6 +35,10 @@ export default class Dashboard extends Component {
             return(
                 <div key={i}>
                     <h1>{house.name}</h1>
+                    <h1>{house.address}</h1>
+                    <h1>{house.city}</h1>
+                    <h1>{house.state}</h1>
+                    <h1>{house.zip}</h1>
                 </div>
             )
         })
@@ -41,7 +53,7 @@ export default class Dashboard extends Component {
                 </div>
 
                 <div className='HouseContainer'>
-                    <House houses={this.state.houses}/>
+                    <House houses={this.state.house}/>
                     <div>{mappedHouses}</div>
                 </div>
                 

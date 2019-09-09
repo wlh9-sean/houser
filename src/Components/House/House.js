@@ -6,6 +6,7 @@ export default class House extends Component {
         return (
             <div>
                 <h2>Home Listings</h2>
+                {/* <div>{this.props.house.name}</div> */}
             </div>
         )
     }

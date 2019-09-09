@@ -42,7 +42,7 @@ export default class Wizard extends Component {
     }
 
     render() {
-        console.log(this.state)
+        console.log('Redirect')
         return (
             <div className ='Container'>
                 <div className='Head'>
@@ -68,9 +68,11 @@ export default class Wizard extends Component {
                     
                     <label>Zip</label> 
                         <input type='number' name='zip' onChange={(event) => this.handleInput(event)} />
-
+                    <Link to='/'>
                     <button onClick={this.createHouse} className='Button'>Complete</button>
-                    
+
+                    </Link>
+
                 </div>
             </div>
         )
