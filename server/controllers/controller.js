@@ -23,11 +23,21 @@ const deleteHouse = (req, res) => {
     })
 }
 
+const updateHouse = (req, res) => {
+    const {name, address, city, state, zip} = req.body
+    const {id} = req.params
+    const db = req.app.get('db')
+    db.update_house({id, name, address, city, state, zip}).then((house) => {
+        res.status(200).send(house)
+    })
+}
+
 
 
 
 module.exports = {
     getHouse,
     newHouse,
-    deleteHouse
+    deleteHouse,
+    updateHouse
 }
